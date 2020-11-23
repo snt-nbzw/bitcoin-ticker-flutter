@@ -36,8 +36,8 @@ const List<String> cryptoList = [
 const coinAPIURL = 'https://rest.coinapi.io/v1/exchangerate';
 
 class CoinData {
-  Future getCoinData() async {
-    String requestURL = '$coinAPIURL/BTC/USD?apikey=$apiKey';
+  Future getCoinData(String selectedCurrency) async {
+    String requestURL = '$coinAPIURL/BTC/$selectedCurrency?apikey=$apiKey';
     print(requestURL);
 
     http.Response response = await http.get(requestURL);
